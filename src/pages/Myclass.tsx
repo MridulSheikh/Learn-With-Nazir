@@ -11,7 +11,7 @@ function Myclass() {
   const {setLoading, loading} = useAuth();
   useEffect(() =>{
     setLoading(true)
-    axios.get("http://localhost:5000/api/v1/course")
+    axios.get("https://learn-with-nazir-server-run.onrender.com/api/v1/course")
     .then((res)=>{
       setCourse(res.data.body)
     })

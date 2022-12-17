@@ -34,7 +34,7 @@ function CourseManagement() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:5000/api/v1/course")
+      .get("https://learn-with-nazir-server-run.onrender.com/api/v1/course")
       .then((res) => {
         setCourse(res.data.body);
       })
@@ -44,7 +44,7 @@ function CourseManagement() {
   const refresh = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5000/api/v1/course")
+      .get("https://learn-with-nazir-server-run.onrender.com/api/v1/course")
       .then((res) => {
         setCourse(res.data.body);
       })

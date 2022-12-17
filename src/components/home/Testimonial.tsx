@@ -14,7 +14,7 @@ export function Testimonial() {
   // fetch data
 
   useEffect(()=>{
-    axios.get("http://localhost:5000/api/v1/feedback")
+    axios.get("https://learn-with-nazir-server-run.onrender.com/api/v1/feedback")
     .then(res =>{
       setFeedback(res.data.body)
     })

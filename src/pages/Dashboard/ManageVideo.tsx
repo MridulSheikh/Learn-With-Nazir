@@ -31,7 +31,7 @@ function ManageVideo() {
 
     useEffect(()=>{
         setLoading(true)
-        axios.get("http://localhost:5000/api/v1/video")
+        axios.get("https://learn-with-nazir-server-run.onrender.com/api/v1/video")
         .then(res => setVideo(res.data.body))
         .catch(error => console.log(error))
         .finally(()=>setLoading(false))
@@ -39,7 +39,7 @@ function ManageVideo() {
 
     const reset = () =>{
         setLoading(true)
-        axios.get("http://localhost:5000/api/v1/video")
+        axios.get("https://learn-with-nazir-server-run.onrender.com/api/v1/video")
         .then(res => setVideo(res.data.body))
         .catch(error => console.log(error))
         .finally(()=>setLoading(false))

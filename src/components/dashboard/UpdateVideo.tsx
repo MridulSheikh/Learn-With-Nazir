@@ -45,7 +45,7 @@ const [video, setVideo] = useState<videoType>()
 
 useEffect(()=>{
   setLoading(true)
-  axios.get(`http://localhost:5000/api/v1/video/${id}`)
+  axios.get(`https://learn-with-nazir-server-run.onrender.com/api/v1/video/${id}`)
   .then(res => {
     setVideo(res.data.body)
   })
@@ -66,7 +66,7 @@ const submit = (data : formType ) =>{
       email : user.email
     }
   }
-  axios.patch(`http://localhost:5000/api/v1/video/${id}`,body)
+  axios.patch(`https://learn-with-nazir-server-run.onrender.com/api/v1/video/${id}`,body)
   .then(res => setSuccess(res.data.message))
   .catch(error => console.log(error))
   .finally(()=>setPending(false))

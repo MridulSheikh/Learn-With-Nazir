@@ -50,7 +50,7 @@ function EditWeek() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:5000/api/v1/week/${id}`)
+      .get(`https://learn-with-nazir-server-run.onrender.com/api/v1/week/${id}`)
       .then((res) => {
         setWeek(res.data.body);
       })
@@ -63,7 +63,7 @@ function EditWeek() {
   // update data
   const submit = (data : fromType) => {
    setPending(true)
-   axios.patch(`http://localhost:5000/api/v1/week/${id}`, data)
+   axios.patch(`https://learn-with-nazir-server-run.onrender.com/api/v1/week/${id}`, data)
    .then(res => {
      setSuccess(res.data.message)
    })

@@ -26,7 +26,7 @@ function Blog() {
   const [page, setPage] = useState(1)
   useEffect(()=>{
     setLoading(true)
-    axios.get(`http://localhost:5000/api/v1/blog?limit=6&page=${page}`)
+    axios.get(`https://learn-with-nazir-server-run.onrender.com/api/v1/blog?limit=6&page=${page}`)
     .then(res => {
       setBlog(res.data.body)
       setLenght(res.data.size)

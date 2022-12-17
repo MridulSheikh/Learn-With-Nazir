@@ -12,7 +12,7 @@ function Play() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:5000/api/v1/video/${play}`)
+      .get(`https://learn-with-nazir-server-run.onrender.com/api/v1/video/${play}`)
       .then((res) => {
         setPlays(res.data.body);
       })

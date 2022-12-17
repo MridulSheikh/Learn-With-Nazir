@@ -34,7 +34,7 @@ function AddWeek() {
       course : courseName
     };
     axios
-      .post("http://localhost:5000/api/v1/week", body)
+      .post("https://learn-with-nazir-server-run.onrender.com/api/v1/week", body)
       .then((res) => {
         setSuccess(res.data.message);
       })
@@ -45,7 +45,7 @@ function AddWeek() {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/v1/course").then((res) => {
+    axios.get("https://learn-with-nazir-server-run.onrender.com/api/v1/course").then((res) => {
       setCourse(res.data.body);
     });
   }, []);

@@ -13,7 +13,7 @@ function Week() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:5000/api/v1/course/${id}`)
+      .get(`https://learn-with-nazir-server-run.onrender.com/api/v1/course/${id}`)
       .then((res) => {
         setCourse(res.data.body);
       })

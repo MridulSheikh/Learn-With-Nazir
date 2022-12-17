@@ -15,7 +15,7 @@ function ManageBlogCard({ name, id, date }: props) {
 
   const deleteBlog = () => {
         setLoading(true)
-        axios.delete(`http://localhost:5000/api/v1/blog/${id}`)
+        axios.delete(`https://learn-with-nazir-server-run.onrender.com/api/v1/blog/${id}`)
         .then(res => {
           alert(res.data.message)
         })

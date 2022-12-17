@@ -30,7 +30,7 @@ function ManageWeek() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:5000/api/v1/week")
+      .get("https://learn-with-nazir-server-run.onrender.com/api/v1/week")
       .then((res) => {
         setWeek(res.data.body);
       })

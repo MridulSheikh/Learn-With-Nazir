@@ -47,7 +47,7 @@ function CoureseCardmanage({
   const onSubmit = (data: courseInput) => {
     setLoading(true);
     axios
-      .patch(`http://localhost:5000/api/v1/course/${_id}`, data)
+      .patch(`https://learn-with-nazir-server-run.onrender.com/api/v1/course/${_id}`, data)
       .then((res) => {
         setSuccess(res.data.message);
       })

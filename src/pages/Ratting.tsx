@@ -26,7 +26,7 @@ const onSubmit: SubmitHandler<Inputs> = (data) =>{
       gender : users.gender
     }
   }
-  const url ='http://localhost:5000/api/v1/feedback'
+  const url ='https://learn-with-nazir-server-run.onrender.com/api/v1/feedback'
   axios.post(url, body)
   .then(res => {
      alert(res.data.message)

@@ -13,7 +13,7 @@ function Vidoe({ children }: any) {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:5000/api/v1/week/${id}`)
+      .get(`https://learn-with-nazir-server-run.onrender.com/api/v1/week/${id}`)
       .then((res) => {
         setWeek(res.data.body);
       })

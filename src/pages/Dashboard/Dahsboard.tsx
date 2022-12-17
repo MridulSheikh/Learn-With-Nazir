@@ -29,7 +29,7 @@ function Dahsboard() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:5000/api/v1/user")
+      .get("https://learn-with-nazir-server-run.onrender.com/api/v1/user")
       .then((res) => {
         setUser(res.data.body);
       })
@@ -38,7 +38,7 @@ function Dahsboard() {
   const callUser = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5000/api/v1/user")
+      .get("https://learn-with-nazir-server-run.onrender.com/api/v1/user")
       .then((res) => {
         setUser(res.data.body);
       })
@@ -53,7 +53,7 @@ function Dahsboard() {
         const users : userInfo[] = [];
         setLoading(true)
         e.preventDefault()
-        axios.get(`http://localhost:5000/api/v1/user/${searchemail}`)
+        axios.get(`https://learn-with-nazir-server-run.onrender.com/api/v1/user/${searchemail}`)
         .then(res => {
            users.push(res.data.body)
            setUser(users)

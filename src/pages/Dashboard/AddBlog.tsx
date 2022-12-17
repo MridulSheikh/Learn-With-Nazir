@@ -28,7 +28,7 @@ function AddBlog() {
                 id : user._id
             }
         }
-         axios.post("http://localhost:5000/api/v1/blog/", body)
+         axios.post("https://learn-with-nazir-server-run.onrender.com/api/v1/blog/", body)
          .then(res => {
             setSuccess(res.data.message)
          })

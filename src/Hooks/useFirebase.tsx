@@ -30,7 +30,7 @@ function useFirebase() {
               email : user.email,
               gender : gender
             }
-            axios.post('http://localhost:5000/api/v1/user',body)
+            axios.post('https://learn-with-nazir-server-run.onrender.com/api/v1/user',body)
             .then(res => {
               setSuccess(res.data.message)
               setUser({name: "nothing"})
@@ -70,6 +70,7 @@ function useFirebase() {
             }
           }
         })
+        .finally(()=>setUserLoading(false))
   }
 
   //logout 
@@ -95,7 +96,7 @@ function useFirebase() {
   useEffect(()=>{
     setUserLoading(true)
     // @ts-ignore
-    const url = `http://localhost:5000/api/v1/user/${localUser?.email}`
+    const url = `https://learn-with-nazir-server-run.onrender.com/api/v1/user/${localUser?.email}`
     axios.get(url)
     .then(
       res=>{

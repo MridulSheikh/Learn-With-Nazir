@@ -42,7 +42,7 @@ function AddVideo() {
   
   useEffect(()=>{
     setLoading(true)
-    axios.get("http://localhost:5000/api/v1/course")
+    axios.get("https://learn-with-nazir-server-run.onrender.com/api/v1/course")
     .then(res => {
       setCourse(res.data.body)
     })
@@ -67,7 +67,7 @@ function AddVideo() {
           email : user.email
         }
       }
-      axios.post("http://localhost:5000/api/v1/video", body)
+      axios.post("https://learn-with-nazir-server-run.onrender.com/api/v1/video", body)
       .then(res =>{
         setSuccess(res.data.message)
       })

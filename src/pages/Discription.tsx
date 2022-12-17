@@ -7,7 +7,7 @@ function Discription() {
   const { id } = useParams();
   const [week, setWeek] = useState({});
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/v1/week/${id}`).then((res) => {
+    axios.get(`https://learn-with-nazir-server-run.onrender.com/api/v1/week/${id}`).then((res) => {
       setWeek(res.data.body);
     });
   }, []);

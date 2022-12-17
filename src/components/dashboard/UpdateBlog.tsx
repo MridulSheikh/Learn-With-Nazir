@@ -42,7 +42,7 @@ function UpdateBlog() {
   const [blog, setBlog] = useState<blogType>()
   
   useEffect(()=>{
-     axios.get(`http://localhost:5000/api/v1/blog/${id}`)
+     axios.get(`https://learn-with-nazir-server-run.onrender.com/api/v1/blog/${id}`)
      .then(res => {
         setBlog(res.data.body)
      })
@@ -59,7 +59,7 @@ function UpdateBlog() {
             email : user.email
         }
     }
-    axios.patch(`http://localhost:5000/api/v1/blog/${id}`, body)
+    axios.patch(`https://learn-with-nazir-server-run.onrender.com/api/v1/blog/${id}`, body)
     .then(res => {
         setSuccess(res.data.message)
     })

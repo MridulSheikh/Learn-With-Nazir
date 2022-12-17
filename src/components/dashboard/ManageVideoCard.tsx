@@ -17,7 +17,7 @@ function ManageVideoCard({name, week, id ,date} : videoInfo) {
 
     const deleteVideo = () =>{
           setLoading(true)
-          axios.delete(`http://localhost:5000/api/v1/video/${id}`)
+          axios.delete(`https://learn-with-nazir-server-run.onrender.com/api/v1/video/${id}`)
           .then(res => {
             alert(res.data.message)
           })

@@ -14,7 +14,7 @@ function AddCourse() {
   const [success, setSuccess] = useState('')
   const handleOnSubmit = (data) => {
     setLoading(true)
-    axios.post("http://localhost:5000/api/v1/course", data)
+    axios.post("https://learn-with-nazir-server-run.onrender.com/api/v1/course", data)
     .then(res => {
         setSuccess(res.data.message)
     })

@@ -28,7 +28,7 @@ function ManageBlog() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:5000/api/v1/blog`)
+      .get(`https://learn-with-nazir-server-run.onrender.com/api/v1/blog`)
       .then((res) => {
         setBlog(res.data.body);
       })
@@ -40,7 +40,7 @@ function ManageBlog() {
   const resetBlog = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5000/api/v1/blog")
+      .get("https://learn-with-nazir-server-run.onrender.com/api/v1/blog")
       .then((res) => {
         setBlog(res.data.body);
       })

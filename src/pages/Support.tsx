@@ -22,7 +22,7 @@ function Support() {
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     setResponse("");
     setLoading(true);
-    const url = `http://localhost:5000/api/v1/support`;
+    const url = `https://learn-with-nazir-server-run.onrender.com/api/v1/support`;
     const body = {
       email: data.email,
       reason: data.reason,

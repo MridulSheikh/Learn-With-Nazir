@@ -42,7 +42,7 @@ function UserCard({
       role: role === "admin" ? "client" : "admin",
     };
     axios
-      .patch(`http://localhost:5000/api/v1/user/${email}`, body)
+      .patch(`https://learn-with-nazir-server-run.onrender.com/api/v1/user/${email}`, body)
       .then((res) => {
         setSuccess(res.data.message);
         callUser()
