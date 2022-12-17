@@ -6,7 +6,7 @@ function CourseInstructor() {
             <div className='text-center text-3xl font-bold mt-10'>
                 <span className='text-primarymain'>Course</span> Instructor
             </div>
-            <div className='grid text-center mx-auto lg:text-left md:grid-cols-2 lg:w-9/12 mt-28 bg-white p-5 rounded-md shadow-md'>
+            <div className='grid text-center mx-auto lg:text-left md:grid-cols-2  mt-28  p-5'>
                 <div className='flex items-end'>
                     <div className='w-44 mx-auto'>
                         <img src="https://www.coachdrparas.com/admin/blog/images/v1about-man-img.jpg" className='' alt="" />
@@ -21,7 +21,7 @@ function CourseInstructor() {
                     </div>
                 </div>
             </div>
-            <div className='grid text-center lg:text-right mx-auto md:grid-cols-2 lg:w-9/12 mt-10 bg-white p-5 rounded-md shadow-md'>
+            <div className='grid text-center lg:text-right mx-auto md:grid-cols-2 mt-10 p-5'>
                 <div className='w-44 lg:hidden mx-auto'>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Kobe_Bryant_Profile.jpg/1200px-Kobe_Bryant_Profile.jpg" className='' alt="" />
                 </div>

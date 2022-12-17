@@ -5,8 +5,23 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import TestimonialCard from "./TestimonialCard";
+import axios from "axios";
 
 export function Testimonial() {
+
+  const [feedback, setFeedback] = useState([])
+
+  // fetch data
+
+  useEffect(()=>{
+    axios.get("http://localhost:5000/api/v1/feedback")
+    .then(res =>{
+      setFeedback(res.data.body)
+    })
+  },[])
+
+
+  // handle carusel responsiveness
   const [windowDimension, detectHW] = useState({
     winWidth: window.innerWidth,
     winHeight: window.innerHeight,
@@ -31,7 +46,7 @@ export function Testimonial() {
   if (windowDimension.winWidth < 769 && windowDimension.winWidth > 481 ) {
     size = 2
   }
-  else if (windowDimension.winWidth < 481) {
+  else if (windowDimension.winWidth < 670) {
     size = 1
   }
   return (
@@ -49,14 +64,19 @@ export function Testimonial() {
             className="mySwiper"
           >
             {
-              data.map(dt =>
+              feedback?.map(dt =>
                 <SwiperSlide>
                   <TestimonialCard
-                    key={dt.id}
-                    name={dt.name}
-                    email={dt.email}
-                    sex={dt.sex}
-                    body={dt.body} />
+                    // @ts-ignore
+                    key={dt?.id}
+                    // @ts-ignore
+                    name={dt?.user?.name}
+                    // @ts-ignore
+                    email={dt?.user?.email}
+                    // @ts-ignore
+                    sex={dt?.user?.gender}
+                    // @ts-ignore
+                    body={dt?.body} />
                 </SwiperSlide>
               )
             }
