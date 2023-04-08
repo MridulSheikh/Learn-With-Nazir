@@ -4,11 +4,9 @@ import {motion} from 'framer-motion'
 
 const parentVarients = {
     hidden : {
-        x: -250,
         opacity : 0,
       },
       visible : {
-        x: 0,
         opacity : 1,
         transition: {
             type: "spring",
@@ -19,31 +17,13 @@ const parentVarients = {
           },
       }
 }
-const imgVarients = {
-    hidden : {
-        x: 250,
-        opacity : 0,
-      },
-      visible : {
-        x: 0,
-        y: [0, -20],
-        opacity : 1,
-        transition: {
-            duration : 1,
-            delay : 0.70,
-            y: {
-                yoyo : Infinity,
-            }
-          },
-      }
-}
 
 function FequendlyAskQuistion() {
     return (
         <div className='container pt-10 px-5 xl:px-0 xl:max-w-screen-lg mx-auto'>
-            <div className='text-center text-3xl font-bold mt-10'>
+            <motion.div className='text-center text-3xl font-bold mt-10' initial={{y: -125}} animate={{y: 0}} transition={{duration : 0.67, delay : 0.25}}>
                 Frequently Asked <span className='text-primarymain'>Questions</span>
-            </div>
+            </motion.div>
             <div className='mt-20'>
                 <motion.div variants={parentVarients} initial="hidden" animate="visible" className='col-span-3'>
                     {

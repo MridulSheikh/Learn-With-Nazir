@@ -63,7 +63,7 @@ function HomeBanner() {
                         <motion.h1 variants={childrenVarients} className=' text-3xl lg:text-5xl font-bold xl:leading-tight z-40'>Complete Web Development Course With Nazir</motion.h1>
                         <motion.p variants={childrenVarients} className='text-sm text-smallthin my-7'>Come and enjoy effective web dev learning process. Enjoy unlimited coding support, day concecptual session suport.After finished course get fond job.</motion.p>
                         <motion.div variants={childrenVarients} className='flex'>
-                        <Link to="/myclass"><button className=' bg-primarymain text-white px-5 py-2 rounded-md'>start free</button></Link>
+                        <Link to="/myclass"><button className=' bg-primarymain text-white px-5 py-2 rounded-md hover:bg-transparent hover:border-primarymain border-2 hover:text-primarymain ease-in-out duration-300'>start free</button></Link>
                         <a href="https://youtu.be/l1EssrLxt7E" target="_blank">
                         <button className='text-red-700 font-bold ml-5 flex gap-2 items-center'>
                             <AiFillYoutube className='text-4xl' />

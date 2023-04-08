@@ -14,31 +14,70 @@ const paraVariants = {
     height: "auto",
     transition: {
       duration: 0.7,
-    }
+    },
+  },
+};
+
+const acordionsVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 0.5,
+      duration: 1,
+    },
+  },
+  exit: {
+    rotate: -45,
+    transition: {
+      delay: 0.5,
+      duration: 1,
+    },
+  },
+};
+
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
   },
 };
 
 function AskCard({ title, body }: props) {
   const [clicked, setClicked] = useState(false);
   return (
-    <div
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
       onClick={() => setClicked(!clicked)}
       className={`p-10  mt-5 bg-white shadow-md overflow-hidden ease-in duration-200 rounded-md`}
     >
       <div className="md:text-2xl font-semibold flex justify-between">
-        <p className="md:text-lg">{title}</p>
-        <motion.button
-          initial={{ rotate: -250 }}
-          animate={{ rotate: 0 }}
-          transition={{ duration: 0.5, delay: 0.7 }}
-          className="transition-all duration-500"
-        >
-          {!clicked ? (
-            <AiOutlinePlus className="font-bold text-primarymain text-xl" />
-          ) : (
-            <AiOutlineMinus className="font-bold text-primarymain text-xl" />
-          )}
-        </motion.button>
+        <p className="md:text-lg transition-all duration-200">{title}</p>
+        {clicked ? (
+          <motion.button
+            variants={acordionsVariants}
+            initial="hidden"
+            animate="visible"
+            className="transition-all duration-500"
+          >
+            <AiOutlineMinus className="font-bold text-primarymain text-3xl" />
+          </motion.button>
+        ) : (
+          <motion.button
+            variants={acordionsVariants}
+            initial="hidden"
+            animate="visible"
+            className="transition-all duration-500"
+          >
+            <AiOutlinePlus className="font-bold text-primarymain text-3xl" />
+          </motion.button>
+        )}
       </div>
       {/* @ts-ignore */}
       <AnimatePresence>
@@ -47,14 +86,14 @@ function AskCard({ title, body }: props) {
             variants={paraVariants}
             initial="hidden"
             animate="visible"
-            exit={{height : 0}}
+            exit={{ height: 0 }}
             className={`mt-6`}
           >
             {body}
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 }
 export default AskCard;
