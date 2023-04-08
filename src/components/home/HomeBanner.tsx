@@ -1,5 +1,52 @@
 import {Link} from 'react-router-dom'
 import {AiFillYoutube} from 'react-icons/ai'
+import {motion} from "framer-motion"
+
+const titleVarients = {
+    hidden : {
+        x: -250,
+        opacity : 0,
+      },
+      visible : {
+        x: 0,
+        opacity : 1,
+        transition: {
+            type: "spring",
+            mass: 0.4,
+            damping: 8,
+            when: "beforeChildren",
+            staggerChildren: 0.4,
+          },
+      }
+}
+
+const imgVarients = {
+    hidden : {
+        x: 250,
+        opacity : 0,
+      },
+      visible : {
+        x: 0,
+        y: [0, -20],
+        opacity : 1,
+        transition: {
+            duration : 1,
+            delay : 0.70,
+            y: {
+                yoyo : Infinity,
+            }
+          },
+      }
+}
+
+const childrenVarients = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+    }
+  };
 
 function HomeBanner() {
     return (
@@ -12,10 +59,10 @@ function HomeBanner() {
             <img src="/img/pattern/pattern.png" alt="" className='absolute w-7 h-7 top-32 rounded-full right-9 opacity-10' />
             <div className='container px-5 xl:px-0 xl:max-w-screen-lg mx-auto flex items-center'>
                 <div className='md:grid grid-cols-2 py-16'>
-                    <div>
-                        <h1 className=' text-3xl lg:text-5xl font-bold xl:leading-tight z-40'>Complete Web Development Course With Nazir</h1>
-                        <p className='text-sm text-smallthin my-7'>Come and enjoy effective web dev learning process. Enjoy unlimited coding support, day concecptual session suport.After finished course get fond job.</p>
-                        <div className='flex'>
+                    <motion.div variants={titleVarients} initial="hidden" animate="visible">
+                        <motion.h1 variants={childrenVarients} className=' text-3xl lg:text-5xl font-bold xl:leading-tight z-40'>Complete Web Development Course With Nazir</motion.h1>
+                        <motion.p variants={childrenVarients} className='text-sm text-smallthin my-7'>Come and enjoy effective web dev learning process. Enjoy unlimited coding support, day concecptual session suport.After finished course get fond job.</motion.p>
+                        <motion.div variants={childrenVarients} className='flex'>
                         <Link to="/myclass"><button className=' bg-primarymain text-white px-5 py-2 rounded-md'>start free</button></Link>
                         <a href="https://youtu.be/l1EssrLxt7E" target="_blank">
                         <button className='text-red-700 font-bold ml-5 flex gap-2 items-center'>
@@ -23,10 +70,10 @@ function HomeBanner() {
                             Watch video
                         </button>
                         </a>
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
                     <div className='mt-10 xl:mt-0'>
-                        <img src="/img/manprogramming2.png" className='m-auto z-50 ' alt="manprogramming" width="70%" />
+                        <motion.img variants={imgVarients} initial="hidden" animate="visible" src="/img/manprogramming2.png" className='m-auto z-50 ' alt="manprogramming" width="70%" />
                     </div>
                 </div>
             </div>

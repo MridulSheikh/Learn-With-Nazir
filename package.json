@@ -21,6 +21,7 @@
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
     "react-spinners": "^0.13.7",
+    "framer-motion": "^1.10.3",
     "swiper": "^8.4.5",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
@@ -51,5 +52,10 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.2.3"
-  }
+  },
+  "description": "A Simple Coures Management Website",
+  "main": "tailwind.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

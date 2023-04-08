@@ -3,26 +3,65 @@ import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import useAuth from "../../Hooks/useAuth";
 import MessengerCustomerChat from "react-messenger-customer-chat";
+import { motion } from "framer-motion";
+
+const headerVarients = {
+  hidden: {
+    opacity: 0,
+    y: -250,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    damping: 8,
+    when: "beforeChildren",
+    staggerChildren: 0.4,
+    transition: { delay: 0.2, duration : 0.50},
+  },
+};
+
+const logoVariants = {
+  hidden : {
+    x: -250,
+    opacity : 0,
+  },
+  visible : {
+    x: 0,
+    opacity : 1,
+    transition: {ease : "easeInOut", duration : .60, delay : .70},
+  }
+}
+const linkVariants = {
+  hidden : {
+    x: 250,
+    opacity : 0,
+  },
+  visible : {
+    x: 0,
+    opacity : 1,
+    transition: {ease : "easeInOut", duration : .60, delay : .70},
+  }
+}
 
 function Navigation() {
   const [open, setOpen] = useState<boolean>(false);
   const { user, logout } = useAuth();
   return (
     <>
-      <div className="py-3 bg-white z-50 drop-shadow-sm sticky  top-0">
+      <motion.div variants={headerVarients} initial="hidden" animate="visible" className="py-3 bg-white z-50 drop-shadow-sm sticky  top-0">
         <div className="flex justify-between container px-5 xl:px-0 xl:max-w-screen-lg mx-auto">
-          <div>
+          <motion.div variants={logoVariants}>
             <Link to="/">
-              <img src="/img/logo.png" alt="logo" className="w-16 m-auto" />
+              <motion.img drag dragConstraints={{left: 0, top: 0, right: 0, bottom: 0}} src="/img/logo.png" alt="logo" className="w-16 m-auto" />
             </Link>
-          </div>
+          </motion.div>
           <button
             className="xl:hidden text-2xl text-primarymain transition duration-300 ease-in-out"
             onClick={() => setOpen(!open)}
           >
             <GiHamburgerMenu />
           </button>
-          <div className="hidden xl:flex justify-between items-center text-md font-bold text-hscolor">
+          <motion.div variants={linkVariants} className="hidden xl:flex justify-between items-center text-md font-bold text-hscolor">
             <Link to="/myclass">
               <p className="mx-5 transition duration-300 ease-in-out hover:text-primarymain">
                 My Classes
@@ -86,7 +125,7 @@ function Navigation() {
                 </Link>
               </div>
             )}
-          </div>
+          </motion.div>
         </div>
         {open && (
           <div className="fixed transition xl:hidden duration-300 ease-in-out bg-white text-center w-screen h-screen text-md font-bold text-hscolor">
@@ -151,7 +190,7 @@ function Navigation() {
             )}
           </div>
         )}
-      </div>
+      </motion.div>
       <MessengerCustomerChat
         pageId="117897214535539"
         appId="1345283516296096"

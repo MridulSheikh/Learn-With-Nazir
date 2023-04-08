@@ -8,14 +8,14 @@ function FequendlyAskQuistion() {
             <div className='text-center text-3xl font-bold mt-10'>
                 Frequently Asked <span className='text-primarymain'>Questions</span>
             </div>
-            <div className='grid md:grid-cols-2 gap-6 mt-20'>
-                <div>
+            <div className='grid md:grid-cols-5 gap-6 mt-20'>
+                <div className='col-span-3'>
                     {
                         faq.map(fq => <AskCard key={fq.title} title={fq.title} body={fq.body} /> )
                     }
                 </div>
-                <div>
-                    <img src="/img/faq.png" className='w-100' alt="faq" />
+                <div className='col-span-2 relative'>
+                    <img src="/img/faq.png" className='w-full h-full object-contain my-auto' alt="faq" />
                 </div>
             </div>
         </div>

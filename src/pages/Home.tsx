@@ -12,9 +12,9 @@ function Home() {
       <div>
         <HomeBanner />
         <CourseDetails />
-        <Testimonial />
         <FequendlyAskQuistion />
         <CourseInstructor />
+        <Testimonial />
       </div>
     </Layout>
   )
