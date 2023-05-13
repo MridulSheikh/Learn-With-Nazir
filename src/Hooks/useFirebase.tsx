@@ -33,7 +33,7 @@ function useFirebase() {
             axios.post('https://learn-with-nazir-server-run.onrender.com/api/v1/user',body)
             .then(res => {
               setSuccess(res.data.message)
-              setUser({name: "nothing"})
+              setLocalUser({name: name, email: user.email, gender : gender})
             })
             .catch(error => {
              setError(error.response.data.message)

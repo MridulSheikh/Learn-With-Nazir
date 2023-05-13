@@ -15,12 +15,9 @@ function Login() {
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
 
     const from  = location?.state?.from?.pathname || "/";
-    const onSubmit: SubmitHandler<Inputs> = (data) => {
+    const onSubmit: SubmitHandler<Inputs> = async (data) => {
         setError('');
         singin(data.email, data.password)
-        .then(()=>{
-            navigate(from, {replace : true})
-        })
     };
     if(user?.email){
         navigate(from, {replace : true})

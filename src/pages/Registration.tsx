@@ -27,9 +27,8 @@ const Select = React.forwardRef<HTMLSelectElement, { label: string } & ReturnTyp
 ));
 
 function Registration() {
-  const { registration, userLoading, error, setError, user } = useAuth();
+  const { registration, userLoading, error, setError, user, suceess } = useAuth();
   const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
-  console.log(errors)
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     setError('');
     if (data.re_password != data.password) {
@@ -38,7 +37,7 @@ function Registration() {
     }
     registration(data.email, data.password, data.name, data.gender)
   };
-  return user?.name ? <Navigate to="/login" replace={true} /> :
+  return(
     <div>
       <Layout>
         <div className='grid bg-white rounded-md shadow-lg p-5 lg:grid-cols-2 container xl:max-w-screen-lg mx-auto mt-10'>
@@ -111,6 +110,7 @@ function Registration() {
         </div>
       </Layout>
     </div>
+  )
 }
 
 export default Registration
